@@ -1,8 +1,9 @@
 # なんでも〇〇秒ドローイング
 
-[!['altテキスト']('サムネイル画像のURL')]('https://youtu.be/YhupSS0ShVU')
+[!['デモ動画']('https://github.com/SirakabaBiome/Nandemo_Drawing_Practise/blob/main/demo_pic/Godot_v4.2.1-stable_win64_pYuPNW2aRa.png?raw=true')]('https://youtu.be/YhupSS0ShVU')
 
 　フォルダの中に入っている画像をなんでもランダムに表示して一定時間ごとに切り替える練習に使えるようにするソフトです。
+　Ver0.0.1
 
 # 使い方
 1. 起動する

@@ -1,0 +1,178 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8iijhxpokk7n"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_s5lhg"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_s5lhg")
+
+[node name="DrawTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 60.0
+one_shot = true
+
+[node name="CountDownTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[node name="CoolDownTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 10.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+collapsed = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "休憩中"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "残り秒数："
+
+[node name="TimeLabelNum" type="Label" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "60"
+
+[node name="TimeEdit" type="TextEdit" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "秒数"
+
+[node name="SecondPreset" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="15s" type="Button" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "15"
+
+[node name="30s" type="Button" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "30"
+
+[node name="60s" type="Button" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "60"
+
+[node name="90s" type="Button" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "90"
+
+[node name="120s" type="Button" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "120
+"
+
+[node name="180s" type="Button" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "180
+"
+
+[node name="StartButton" type="Button" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "スタート"
+
+[node name="StopButton" type="Button" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ストップ"
+
+[node name="DirectorySelectButton" type="Button" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ディレクトリ選択"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "今回描いた枚数："
+
+[node name="ResultNum" type="Label" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+
+[node name="TopToggle" type="CheckButton" parent="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "画面を最前面にする"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PanelContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="ImageRect" type="TextureRect" parent="CanvasLayer/PanelContainer/HSplitContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SystemMessageLabel" type="Label" parent="CanvasLayer/PanelContainer/HSplitContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "エラーメッセージはここに出ます"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Open a Directory"
+position = Vector2i(64, 64)
+size = Vector2i(640, 480)
+auto_translate = false
+ok_button_text = "現在のフォルダーを選択"
+dialog_close_on_escape = false
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[connection signal="timeout" from="DrawTimer" to="." method="_on_draw_timer_timeout"]
+[connection signal="timeout" from="CountDownTimer" to="." method="_on_count_down_timer_timeout"]
+[connection signal="timeout" from="CoolDownTimer" to="." method="_on_cool_down_timer_timeout"]
+[connection signal="text_changed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/TimeEdit" to="." method="_on_time_edit_text_changed"]
+[connection signal="text_set" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/TimeEdit" to="." method="_on_time_edit_text_set"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset/15s" to="." method="draw_time_set" binds= [15]]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset/30s" to="." method="draw_time_set" binds= [30]]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset/60s" to="." method="draw_time_set" binds= [60]]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset/90s" to="." method="draw_time_set" binds= [90]]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset/120s" to="." method="draw_time_set" binds= [120]]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/SecondPreset/180s" to="." method="draw_time_set" binds= [180]]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/StopButton" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/DirectorySelectButton" to="." method="_on_directory_select_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HSplitContainer/VBoxContainer/TopToggle" to="." method="_on_check_button_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]

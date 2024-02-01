@@ -22,4 +22,4 @@
 - 非常にシンプルなGodotEngine 4.2.1で作成したソフトウェアなので知識がある人はissue飛ばすより自分で作ったほうが早いと思います。
 - Windows10でしかテストしていません。その他のOSの方は各自GodotEngineでビルドしてください。
 
-[BOOTHで投げ銭する](https://sirakababiome.booth.pm/items/5467597)
+[BOOTHで投げ銭する！](https://sirakababiome.booth.pm/items/5467597)
